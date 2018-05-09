@@ -1,6 +1,6 @@
 {
   "name": "file-coverage-report",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,7 @@
   "bugs": {
     "url": "https://github.com/michaeljacobdavis/file-coverage-report/issues"
   },
-  "homepage":
-    "https://github.com/michaeljacobdavis/file-coverage-report#readme",
+  "homepage": "https://github.com/michaeljacobdavis/file-coverage-report#readme",
   "dependencies": {
     "byzantine": "^1.1.0"
   }
