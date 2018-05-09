@@ -67,12 +67,8 @@ function generateOverallCoverage() {
 
 function generateChangeCoverage(changedFiles) {
   const prefix = process.cwd();
-  const ignoreRegex = /^src\/.*\.js$/;
-  const testRegex = /\.test\.js/;
-  const changedSourceFiles = changedFiles.filter(
-    filename => ignoreRegex.test(filename) && !testRegex.test(filename)
-  );
-  if (!changedSourceFiles.length) {
+
+  if (!changedFiles.length) {
     return `No files`;
   }
   const fileCoverage = coverages.reduce((coverageMap, entry) => {
@@ -82,7 +78,7 @@ function generateChangeCoverage(changedFiles) {
 
   return generateMarkDownTable(
     ["file", "statements", "branches", "functions"],
-    changedSourceFiles.map(filename => {
+    changedFiles.map(filename => {
       const path = `${prefix}/${filename}`;
       const entry = fileCoverage[path];
       if (!entry) {
